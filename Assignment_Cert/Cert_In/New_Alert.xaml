@@ -1,0 +1,412 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Latest_Alert" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="IN_Browser" Type="InArgument(ui:Browser)" />
+  </x:Members>
+  <this:Latest_Alert.IN_Browser>
+    <InArgument x:TypeArguments="ui:Browser" />
+  </this:Latest_Alert.IN_Browser>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1106.4,5232.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Latest_Alert_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence - Latest Alert" sap:VirtualizedContainerService.HintSize="707.2,5168" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="Bool_New" />
+      <Variable x:TypeArguments="x:Int32" Name="TableRow" />
+      <Variable x:TypeArguments="x:Int32" Name="LatestCount" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="665.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Process started for dwonload Latest Alerts&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="665.6,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[TableRow]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">3</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="665.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Checking new alerts&quot;]" />
+    <ui:UiElementExists DisplayName="UiElementExists - new Alert" Exists="[Bool_New]" sap:VirtualizedContainerService.HintSize="665.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+      <ui:UiElementExists.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b55a9e54-01bf-428d-b68a-d81feb13602e" InformativeScreenshot="02b5cb4d636054a74c905d6000706e8d" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Indian - Computer Emergency Response Team' /&gt;&lt;webctrl src='*MainServlet?pageid=PUBWEL01' tag='FRAME' /&gt;&lt;webctrl aaname='NEW' tableRow='{0}' tag='IMG' /&gt;&quot;, TableRow)]">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:UiElementExists.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:UiElementExists>
+    <Assign sap:VirtualizedContainerService.HintSize="665.6,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[LatestCount]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">1</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Bool_New]" DisplayName="While" sap:VirtualizedContainerService.HintSize="665.6,4462.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+      <ui:InterruptibleWhile.Body>
+        <TryCatch sap:VirtualizedContainerService.HintSize="630.4,4295.2" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+          <TryCatch.Try>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="593.6,4064" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="552,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Downloading latestalert&quot;+LatestCount.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="552,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Selecting the Alert which is New&quot;]" />
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Latest alert in new state" sap:VirtualizedContainerService.HintSize="552,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="63868c18-aa21-478a-829c-b4b0b1d152be" InformativeScreenshot="1896e76637dae2db5790667873175b82" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Indian - Computer Emergency Response Team' /&gt;&lt;webctrl src='*MainServlet?pageid=PUBWEL01' tag='FRAME' /&gt;&lt;webctrl tableRow='{0}' tag='A' aaname='CERT-In*' innertext='*' /&gt;&quot;, TableRow)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="552,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Print the new alert&quot;]" />
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click  - Print" sap:VirtualizedContainerService.HintSize="552,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c72e533b-fc87-4c6a-8793-bb70ed9ea75e" InformativeScreenshot="f60db921ab24d3c1828a18ed4ea04735" Selector="&lt;html app='chrome.exe' title='Indian - Computer Emergency Response Team' /&gt;&lt;webctrl src='*MainServlet?pageid=PUBWEL01' tag='FRAME' /&gt;&lt;webctrl tag='IMG' aaname='Print' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,3278.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="Str_LatestPath" />
+                  <Variable x:TypeArguments="x:Boolean" Name="B_FolderExist" />
+                  <Variable x:TypeArguments="x:Boolean" Name="B_LatestFile" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign - Folder path" sap:VirtualizedContainerService.HintSize="510.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Str_LatestPath]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory+"\"+in_Config("FilePath_LatestAlert").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists - latest alerts folder" Exists="[B_FolderExist]" sap:VirtualizedContainerService.HintSize="510.4,90.4" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[Str_LatestPath]" PathType="Folder" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Checking folder is exist or not for latest alert&quot;]" />
+                <If Condition="[B_FolderExist = False]" DisplayName="If- Alert folder" sap:VirtualizedContainerService.HintSize="510.4,495.2" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="375.2,306.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Folder doesn't exist for latest alert, creating new folder&quot;]" />
+                      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -  Alert Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[Str_LatestPath]" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,391.2" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                  <TryCatch.Try>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="3000" DelayMS="2000" DisplayName="Send Hotkey - save" sap:VirtualizedContainerService.HintSize="333.6,154.4" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6750ea1-eb20-4066-83dd-972f27c36994" InformativeScreenshot="08c959d380c950ff2ab911b228659bf0" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='CERT-In Vulnerability Notes - Google Chrome' /&gt;&lt;wnd cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,226.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'chrome.exe CERT-In'" sap:VirtualizedContainerService.HintSize="333.6,156" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:ClickImage.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:ClickImage.CursorPosition>
+                          <ui:ClickImage.Image>
+                            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.25" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAgCAYAAABAQWX9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAK1SURBVGhD7ZYxb9pAGIb7O/gl/gXZOnbL2I2RLRsTGctEMqAskbdSRVEkBpYKpEiVVUVFFZIrVTVSRCwK2AZjg4G3d747bAK9hYvUVHfSO9zn7858D/d+5zeF0hO0DkvDkUjDkUjDkUjDkUjDkUjDkUjDkUjDkUjDkUjDkUjDkUjDkUgpnJNPEezZBtux3sDtRzirHM7/16UMjvE5QcyZ+KME9iCBM+eB2QLlVwhIGRxzwDi43ya5+AR3Ixa373fzX4NeAI4HIxc3ahMUTQ/va0Mem+Cil8BPWD4dvhvjok6f+WgFNLJB5ybbo/qLWdX5OmaxSoBGf414nYaBZAPbCnDC81VJna1uF/D5b8VsBasX4rz+ey+v/IMVGgcJWlaMzpD3qGGEd+R58Tur2O35fM0UJI2MBGZqzQkawzRlz77OQ/7UHi+lDdn4GKHr5RoyGXGwxNW1ODUjlNsRGlaI8qVYN8uKp/PLCA6dBjGKdH7DoT+G7ESS3pYOMU/XxGwN6W1nIqZASuEIGTUfVWtBbq60DFI3KVzA4JbI24oNDqc05idjjZaZnbRumwEW88ND7KFGiuBQGORE3E9xuhPPLOBYtLgxTJfN/f4c56QXFc0QVmqLrDCjzcg5DzN06LN4iSp/trUl6VMN+s4dzVDieSqkCE6IbtoqSCO9FRaiGuLqMa2Fw5nDTmcrNMTVXiFr87YSMbrffJNaKv455fsRCVsR2+W/n4xr79kfc7yU2er0y/53jh1wC2xt5eHOYyHakGkOOQB87FpC3FAUuNXM4oVSgI6w63zF3uOSm4tMY9KH3ub2OFZKe85pM95tyOQLOb2mtw2ZqB6iM8py/AFZc+D6LjSXDDY5IXtWEX1LXOXiS/zDs7wj9SIN+X+RhiORhiORhiORhiORhiORhiORhvNXPeEPA7XUyBTkIHkAAAAASUVORK5CYII=" />
+                          </ui:ClickImage.Image>
+                          <ui:ClickImage.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2a51464c-caaa-4230-8ba5-94e6ff4c6d3e" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='CERT-In Advisory Notes - Google Chrome' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:ClickImage.Target>
+                        </ui:ClickImage>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+                <Assign DisplayName="Assign - File path" sap:VirtualizedContainerService.HintSize="510.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Str_LatestPath]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Str_LatestPath+"\"+"Vulnerablity"+LatestCount.ToString+".pdf"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists - Old file" Exists="[B_LatestFile]" sap:VirtualizedContainerService.HintSize="510.4,90.4" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[Str_LatestPath]" PathType="File" />
+                <If Condition="[B_LatestFile]" sap:VirtualizedContainerService.HintSize="510.4,495.2" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="475.2,306.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Deleting old existing files of Latest alert&quot;]" />
+                      <ui:DeleteFileX DisplayName="Delete File - Old alert File" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[Str_LatestPath]" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into - File name" sap:VirtualizedContainerService.HintSize="510.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[Str_LatestPath]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f40052ed-e1e2-449b-8b55-1b0433af17fc" InformativeScreenshot="8dea2a9970d645b9c6b46002af7e4cc1" Selector="&lt;wnd app='chrome.exe' cls='*' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Saving file to the local&quot;]" />
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click  - Save" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0b0def8c-3da4-4896-a6b1-07be04706137" InformativeScreenshot="0ff62b3d175002ed57ca877f4a753782" Selector="&lt;wnd app='chrome.exe' cls='*' title='Save As' /&gt;&lt;wnd title='&amp;amp;Save' aaname='Save' cls='Button' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;File saved successfully&quot;]" />
+                <ui:RefreshBrowser Browser="[IN_Browser]" DisplayName="Refresh Browser" sap:VirtualizedContainerService.HintSize="510.4,22.4" sap2010:WorkflowViewState.IdRef="RefreshBrowser_1" />
+                <Assign sap:VirtualizedContainerService.HintSize="510.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[TableRow]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[TableRow+2]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="510.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[LatestCount]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[LatestCount+1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:UiElementExists DisplayName="Element Exists - new" Exists="[Bool_New]" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b55a9e54-01bf-428d-b68a-d81feb13602e" InformativeScreenshot="02b5cb4d636054a74c905d6000706e8d" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Indian - Computer Emergency Response Team' /&gt;&lt;webctrl src='*MainServlet?pageid=PUBWEL01' tag='FRAME' /&gt;&lt;webctrl aaname='NEW' tableRow='{0}' tag='IMG' /&gt;&quot;, TableRow)]">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:UiElementExists.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:UiElementExists>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Latest alert&quot;+LatestCount.tostring]" />
+              </Sequence>
+            </Sequence>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="596.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[exception.Message]" />
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+      </ui:InterruptibleWhile.Body>
+    </ui:InterruptibleWhile>
+  </Sequence>
+</Activity>
